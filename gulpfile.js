@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const csso = require('gulp-csso');
-const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
+const terser = require('gulp-terser');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const imagemin = require('gulp-imagemin');
@@ -42,8 +41,7 @@ gulp.task('imagemin', function () {
 gulp.task('js', function () {
   return gulp.src('src/js/**/*.js')
     .pipe(plumber())
-    .pipe(concat('main.js'))
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(gulp.dest('assets/js/'));
 });
 

@@ -1,0 +1,1 @@
+import SweetScroll from"sweet-scroll";document.addEventListener("DOMContentLoaded",(()=>{new SweetScroll}),!1);

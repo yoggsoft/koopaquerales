@@ -10,6 +10,8 @@ services:
   kq-gulp:
     image: node:8
     working_dir: "/srv/jekyll"
+    depends_on:
+      - kq-jekyll
     volumes:
       - ".:/srv/jekyll"
     command: "npm install && gulp watch"
