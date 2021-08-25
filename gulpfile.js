@@ -7,8 +7,6 @@ var plumber = require('gulp-plumber');
 var cp = require('child_process');
 var imagemin = require('gulp-imagemin');
 
-var jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'bundle';
-
 /*
 * Compile and minify sass
 */
@@ -51,11 +49,9 @@ gulp.task('js', function(){
 });
 
 gulp.task('watch', function() {
-	gulp.watch('src/styles/**/*.scss', ['sass']);
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/fonts/**/*.{tff,woff,woff2}', ['fonts']);
 	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
-	gulp.watch(['*html', '_includes/*html', '_layouts/*.html']);
 });
 
 gulp.task('default', ['js', 'sass', 'fonts', 'watch']);

@@ -17,14 +17,9 @@
   z-index: 1;
   text-align: center;
   color:#FFF;
-  position: absolute;
   width: 100%;
   background: rgba(0,0,0,0.38);
-  top: 50%;
-  left: 50%;
   margin: 0 auto;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 
   .site-title {
     font-size: 50px;
@@ -40,8 +35,12 @@
 
   .logo {
     width: 50%;
-    max-width: 600px;
     height: auto;
+    max-width: none;
+    
+    @media only screen and (max-width: $screen-lg) {
+      max-width: 600px;
+    }
 
     @media only screen and (max-width: $screen-sm) {
       width: 5em;
