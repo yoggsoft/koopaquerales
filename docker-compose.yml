@@ -1,0 +1,15 @@
+version: '3'
+services:
+  kq-jekyll:
+    image: jekyll/jekyll:4.0
+    volumes:
+      - ".:/srv/jekyll"
+    ports:
+      - 4000:4000
+    command: 'jekyll serve'
+  kq-gulp:
+    image: node:8
+    volumes:
+      - ".:/srv/jekyll"
+    command: "npm install && gulp watch"
+

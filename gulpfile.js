@@ -6,35 +6,8 @@ var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
 var cp = require('child_process');
 var imagemin = require('gulp-imagemin');
-var browserSync = require('browser-sync');
 
 var jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'bundle';
-
-/*
- * Build the Jekyll Site
- * runs a child process in node that runs the jekyll commands
- */
-gulp.task('jekyll-build', function (done) {
-	return cp.spawn(jekyllCommand, ['exec', 'jekyll', 'build'], {stdio: 'inherit'}).on('close', done);
-});
-
-/*
- * Rebuild Jekyll & reload browserSync
- */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-	browserSync.reload();
-});
-
-/*
- * Build the jekyll site and launch browser-sync
- */
-gulp.task('browser-sync', ['jekyll-build'], function() {
-	browserSync({
-		server: {
-			baseDir: '_site'
-		}
-	});
-});
 
 /*
 * Compile and minify sass
@@ -78,11 +51,11 @@ gulp.task('js', function(){
 });
 
 gulp.task('watch', function() {
-	gulp.watch('src/styles/**/*.scss', ['sass', 'jekyll-rebuild']);
+	gulp.watch('src/styles/**/*.scss', ['sass']);
 	gulp.watch('src/js/**/*.js', ['js']);
 	gulp.watch('src/fonts/**/*.{tff,woff,woff2}', ['fonts']);
 	gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
-	gulp.watch(['*html', '_includes/*html', '_layouts/*.html'], ['jekyll-rebuild']);
+	gulp.watch(['*html', '_includes/*html', '_layouts/*.html']);
 });
 
-gulp.task('default', ['js', 'sass', 'fonts', 'browser-sync', 'watch']);
+gulp.task('default', ['js', 'sass', 'fonts', 'watch']);
