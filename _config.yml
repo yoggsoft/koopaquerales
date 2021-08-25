@@ -10,7 +10,7 @@ user_description: >
 user_title: Singer-Songwriter
 email: koopaquerales.music@gmail.com
 
-exclude: ['package.json', 'src' , 'node_modules']
+exclude: ['package.json', 'src', 'node_modules', 'docker-compose.yml', 'Dockerfile']
 
 # Google-analytics
 google-analytics:
