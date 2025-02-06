@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Permanent_Marker } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const permanentMarkerFont = Permanent_Marker({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -16,6 +12,36 @@ export const metadata: Metadata = {
   title: "Koopa Querales - Official Website",
   description: "Official Website of Koopa Querales.",
 };
+
+const jsonlt = `<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type":"Person",
+    "name":"Koopa Querales",
+    "url":"http://www.koopaquerales.com",
+    "disambiguatingDescription":"Venezuelan singer-songwriter",
+    "nationality":"Spain, Venezuelan",
+    "sameAs":[
+      "https://twitter.com/koopaquerales",
+      "https://www.facebook.com/koopaquerales",
+      "https://www.instagram.com/koopaquerales",
+      "https://www.soundcloud.com/koopaquerales",
+      "https://artists.spotify.com/c/artist/26SaZCIwAtd9q93VhE7y60/profile"
+    ]
+  }
+</script>`;
+
+const woorankAssistantSnippet = `<script type="text/javascript">
+    window.woorankAssistantOptions = window.woorankAssistantOptions || {};
+    window.woorankAssistantOptions.url = 'koopaquerales.com';
+    window.woorankAssistantOptions.assistantPublicKey = 'fde41ea65dae85425d58fb96391070ce';
+    window.woorankAssistantOptions.collectWebVitals = true;
+    (function() {
+      var wl = document.createElement('script'); wl.type = 'text/javascript'; wl.async = true;
+      wl.src = 'https://assistant.woorank.com/hydra/assistantLoader.latest.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wl, s);
+    })();
+  </script>`;
 
 export default function RootLayout({
   children,
@@ -51,7 +77,6 @@ export default function RootLayout({
         <meta name="url" content="http://www.koopaquerales.com" />
         <meta itemProp="url" content="http://www.koopaquerales.com" />
 
-        {/* OpenGraph data */}
         <meta property="og:site_name" content="Koopa Querales" />
         <meta property="og:title" content="Koopa Querales" />
         <meta property="og:url" content="http://www.koopaquerales.com" />
@@ -60,45 +85,18 @@ export default function RootLayout({
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content="https://pbs.twimg.com/profile_images/1194786810737647617/rBxiNz9S_400x400.jpg" />
 
-        {/* Twitter Card data */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@koopaquerales" />
         <meta name="twitter:title" content="Koopa Querales - singer-songwriter and guitarist from Venezuela" />
         <meta name="twitter:url" content="http://www.koopaquerales.com" />
-        <meta name="twitter:description" content="Koopa Querales is a singer-songwriter and guitarist from Venezuela, whose music is heavily influenced by the ‘80s and early ‘00s rock" />
+        <meta name="twitter:description" content="Koopa Querales is a singer-songwriter and guitarist from Venezuela, whose music is heavily influenced by the '80s and early '00s rock" />
         <meta name="twitter:creator" content="@koopaquerales" />
         <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/1194786810737647617/rBxiNz9S_400x400.jpg" />
-        {/* <script type="application/ld+json">
-          {
-            "@context": "http://schema.org",
-            "@type":"Person",
-            "name":"Koopa Querales",
-            "url":"http://www.koopaquerales.com",
-            "disambiguatingDescription":"Venezuelan singer-songwriter",
-            "nationality":"Spain, Venezuelan",
-            "sameAs":[
-              "https://twitter.com/koopaquerales",
-              "https://www.facebook.com/koopaquerales",
-              "https://www.instagram.com/koopaquerales",
-              "https://www.soundcloud.com/koopaquerales",
-              "https://artists.spotify.com/c/artist/26SaZCIwAtd9q93VhE7y60/profile"
-            ]
-          }
-        </script> */}
-        {/* <script type="text/javascript">
-          window.woorankAssistantOptions = window.woorankAssistantOptions || {};
-          window.woorankAssistantOptions.url = 'koopaquerales.com';
-          window.woorankAssistantOptions.assistantPublicKey = 'fde41ea65dae85425d58fb96391070ce';
-          window.woorankAssistantOptions.collectWebVitals = true;
-          (function() {
-            var wl = document.createElement('script'); wl.type = 'text/javascript'; wl.async = true;
-            wl.src = 'https://assistant.woorank.com/hydra/assistantLoader.latest.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wl, s);
-          })();
-        </script> */}
+        {jsonlt}
+        {woorankAssistantSnippet}
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${permanentMarkerFont.variable} ${permanentMarkerFont.variable} antialiased`}
       >
         {children}
       </body>
