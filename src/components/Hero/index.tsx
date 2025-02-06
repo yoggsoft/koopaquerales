@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Icon } from "@/components/Icons";
 
-import { StoreType } from "@/app/@types";
+export type StoreType = { title: string, url: string, icon: string };
 
 const STORES: Array<StoreType> = [
   {
