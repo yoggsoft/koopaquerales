@@ -35,8 +35,8 @@ function StoreIcon ({ store }: { store: StoreType }): React.ReactNode {
   const { title, url, icon } = store;
 
   return (
-    <a aria-label={title} href={url} target="_blank">
-      <Icon icon={icon} />
+    <a aria-label={title} href={url} target="_blank" className={'m-6'}>
+      <Icon name={icon} />
     </a>
   )
 }
@@ -58,7 +58,7 @@ export default function Hero() {
           className="page-title display-type-logo text-fit"
         >
           <Image
-            className="logo"
+            className={`logo`}
             src="/img/koopa-querales-logo.png"
             title="Koopa Querales"
             alt="koopa-querales-logo"
@@ -70,16 +70,6 @@ export default function Hero() {
           {
             STORES.map((store: StoreType, key: number) => <StoreIcon key={key} store={store} />)
           }
-        </div>
-        <div className="">
-          <iframe
-            src="https://open.spotify.com/follow/1/?uri=spotify:artist:26SaZCIwAtd9q93VhE7y60&size=detail&theme=dark"
-            width="300"
-            height="56"
-            scrolling="no"
-            style={ {border: 'none', overflow: 'hidden' }}
-          >
-          </iframe>
         </div>
       </div>
     </div>
