@@ -30,32 +30,32 @@ export const metadata: Metadata = {
   }
 };
 
-// const woorankAssistant = `
-//   window.woorankAssistantOptions = window.woorankAssistantOptions || {};
-//   window.woorankAssistantOptions.url = 'koopaquerales.com';
-//   window.woorankAssistantOptions.assistantPublicKey = 'fde41ea65dae85425d58fb96391070ce';
-//   window.woorankAssistantOptions.collectWebVitals = true;
-//   (function() {
-//     var wl = document.createElement('script'); wl.type = 'text/javascript'; wl.async = true;
-//     wl.src = 'https://assistant.woorank.com/hydra/assistantLoader.latest.js';
-//     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wl, s);
-//   })();`;
+const woorankAssistant = `
+  window.woorankAssistantOptions = window.woorankAssistantOptions || {};
+  window.woorankAssistantOptions.url = 'koopaquerales.com';
+  window.woorankAssistantOptions.assistantPublicKey = 'fde41ea65dae85425d58fb96391070ce';
+  window.woorankAssistantOptions.collectWebVitals = true;
+  (function() {
+    var wl = document.createElement('script'); wl.type = 'text/javascript'; wl.async = true;
+    wl.src = 'https://assistant.woorank.com/hydra/assistantLoader.latest.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wl, s);
+  })();`;
 
-// const jsonLd = {
-//   "@context": "http://schema.org",
-//   "@type": "Person",
-//   "name": "Koopa Querales",
-//   "url": "http://www.woorank.com",
-//   "disambiguatingDescription": "Venezuelan singer-songwriter",
-//   "nationality": "Spain, Venezuelan",
-//   "sameAs": [
-//     "https://twitter.com/koopaquerales",
-//     "https://www.facebook.com/koopaquerales",
-//     "https://www.soundcloud.com/koopaquerales",
-//     "https://www.instagram.com/koopaquerales/?hl=en",
-//     "https://artists.spotify.com/c/artist/26SaZCIwAtd9q93VhE7y60/profile"
-//   ]
-// };
+const jsonLd = {
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Koopa Querales",
+  "url": "http://www.woorank.com",
+  "disambiguatingDescription": "Venezuelan singer-songwriter",
+  "nationality": "Spain, Venezuelan",
+  "sameAs": [
+    "https://twitter.com/koopaquerales",
+    "https://www.facebook.com/koopaquerales",
+    "https://www.soundcloud.com/koopaquerales",
+    "https://www.instagram.com/koopaquerales/?hl=en",
+    "https://artists.spotify.com/c/artist/26SaZCIwAtd9q93VhE7y60/profile"
+  ]
+};
 
 export default function RootLayout({
   children,
@@ -70,8 +70,8 @@ export default function RootLayout({
         <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
         <meta name="url" content="http://www.koopaquerales.com" />
         <meta itemProp="url" content="http://www.koopaquerales.com" />
-        {/* <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <script type="text/javascript" dangerouslySetInnerHTML={{ __html: woorankAssistant }} /> */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script type="text/javascript" dangerouslySetInnerHTML={{ __html: woorankAssistant }} />
       </head>
       <body
         className={`${permanentMarkerFont.variable} ${permanentMarkerFont.variable} antialiased`}
