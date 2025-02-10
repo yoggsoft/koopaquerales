@@ -13,6 +13,19 @@ export const metadata: Metadata = {
   description: "Official Website of Koopa Querales.",
 };
 
+const woorankAssistant = `
+<script type="text/javascript">
+  window.woorankAssistantOptions = window.woorankAssistantOptions || {};
+  window.woorankAssistantOptions.url = 'koopaquerales.com';
+  window.woorankAssistantOptions.assistantPublicKey = 'fde41ea65dae85425d58fb96391070ce';
+  window.woorankAssistantOptions.collectWebVitals = true;
+  (function() {
+    var wl = document.createElement('script'); wl.type = 'text/javascript'; wl.async = true;
+    wl.src = 'https://assistant.woorank.com/hydra/assistantLoader.latest.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wl, s);
+  })();
+</script>`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,6 +55,7 @@ export default function RootLayout({
         <meta name="twitter:description" content="Koopa Querales is a singer-songwriter and guitarist from Venezuela, whose music is heavily influenced by the '80s and early '00s rock" />
         <meta name="twitter:creator" content="@koopaquerales" />
         <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/1194786810737647617/rBxiNz9S_400x400.jpg" />
+        {woorankAssistant}
       </head>
       <body
         className={`${permanentMarkerFont.variable} ${permanentMarkerFont.variable} antialiased`}
