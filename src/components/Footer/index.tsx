@@ -3,19 +3,16 @@ import { Icon } from "@/components/Icons";
 export default function Footer() {
   const year = (new Date()).getFullYear();
   return (
-    <footer id="footer">
-      <div className="container-padding">
-        <div className="header-icons">
+    <footer>
+      <div className="container m-6 mt-12 mb-2 p-2 mx-auto text-center">
+        <div className="flex justify-center items-center gap-2">
+          <Icon name='MdCode' />&nbsp;with&nbsp;<Icon name='LuHeart' />&nbsp;and&nbsp;<Icon name='FaGithub' />
         </div>
-        <div className="footer-signature">
-            <span>
-              <Icon name='MdCode' /> with <Icon name='LuHeart' /> and <Icon name='FaGithub' />
-            </span>
-            <br/>
-            <span>
-              {year} - Koopa Querales
-            </span>
-        </div>
+      </div>
+      <div className="container m-2 p-2 mx-auto text-center">
+          <p>
+            {year}&nbsp;-&nbsp;Koopa&nbsp;Querales
+          </p>
       </div>
     </footer>
   );

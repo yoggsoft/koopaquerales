@@ -1,9 +1,18 @@
 import { IconIndex } from '@/components/Icons';
 
-export default function Icon ({ name, ...props }: {name: string}) {
+export default function Icon ({ name, ...props }: {name: string, className?: string, size?:number | string}) {
+  const {
+    className: classNameProp,
+    ...others
+  } = props;
+
   return (
-    <div style={{ fontSize: 70 }} {...props}>
+    <span
+      className={classNameProp}
+      {...others}
+      style={{fontSize: 52}}
+    >
       {IconIndex[name]}
-    </div>
+    </span>
   )
 }
