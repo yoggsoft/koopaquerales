@@ -11,7 +11,7 @@ export default function Icon ({ name, ...props }: {name: IconNameType, className
     <span
       className={classNameProp}
       {...others}
-      style={{fontSize: 52}}
+      style={{fontSize: 36}}
     >
       {IconIndex[name]}
     </span>
