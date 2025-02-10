@@ -1,77 +1,80 @@
 import Image from "next/image";
-import { Icon } from "@/components/Icons";
+import { IconWithLink } from "@/components/Icons";
+import { IconNameType } from "@/components/Icons/IconIndex";
 
-export type StoreType = { title: string, url: string, icon: string };
+export type ItemType = {
+  title: item,
+  url: string,
+  icon: IconNameType
+};
 
-const STORES: Array<StoreType> = [
+export type item =
+  'facebook' |
+  'instagram' |
+  'youtube' |
+  'tiktok' |
+  'amazon' |
+  'apple' |
+  'applemusic' |
+  'deezer' |
+  'spotify' |
+  'soundcloud' |
+  'ytmusic';
+
+const SOCIAL: Array<ItemType> = [
   {
-    title: 'amazon',
-    icon: 'SiAmazonmusic',
-    url: 'https://music.amazon.com/search/koopa+querales'
+    title: 'facebook',
+    url: 'https://www.facebook.com/koopaquerales',
+    icon: 'facebook'
   },
   {
-    title: 'Apple Music',
-    icon: 'SiApplemusic',
-    url: 'https://itunes.apple.com/be/artist/koopa-querales/1423135500'
+    title: 'youtube',
+    url: 'https://www.youtube.com/c/koopaquerales',
+    icon: 'youtube'
   },
   {
-    title: 'Spotify',
-    icon: 'FaSpotify',
-    url: 'https://open.spotify.com/artist/26SaZCIwAtd9q93VhE7y60'
+    title: 'instagram',
+    url: 'https://www.instagram.com/koopaquerales',
+    icon: 'instagram'
   },
   {
-    title: 'YouTube Music',
-    icon: 'SiYoutubemusic',
-    url: 'https://play.google.com/store/music/artist/Koopa_Querales?id=Ahcnhnktgwajxjblxn2ulnd3c4a'
-  },
-  {
-    title: 'Soundcloud',
-    icon: 'FaSoundcloud',
-    url: 'https://soundcloud.com/koopaquerales'
+    title: 'tiktok',
+    url: 'https://www.tiktok.com/@koopaquerales',
+    icon: 'tiktok'
   }
 ];
 
-function StoreIcon ({ store }: { store: StoreType }): React.ReactNode {
-  const { title, url, icon } = store;
-
-  return (
-    <a aria-label={title} href={url} target="_blank" className={'m-6'}>
-      <Icon name={icon} />
-    </a>
-  )
-}
-
 export default function Hero() {
   return (
-    <div className='hero'>
-      <Image
-        src="/img/header-bg.jpg"
-        width={1785}
-        height={958}
-        className="image-bg"
-        alt="koopa-querales-hero"
-        title="Koopa Querales"
-      />
-      <div className="header">
-        <h1
-          id="site-title"
-          className="page-title display-type-logo text-fit"
-        >
-          <Image
-            className={`logo`}
-            src="/img/koopa-querales-logo.png"
-            title="Koopa Querales"
-            alt="koopa-querales-logo"
-            width={893}
-            height={249}
-          />
-        </h1>
-        <div className="header-icons">
-          {
-            STORES.map((store: StoreType, key: number) => <StoreIcon key={key} store={store} />)
-          }
+    <>
+      <section className='grid'>
+        <Image
+          src="/img/header-bg.jpg"
+          width={1785}
+          height={958}
+          className="image-bg grayscale w-full"
+          alt="koopa-querales-hero"
+          title="Koopa Querales"
+        />
+        <div className="container p-6 mx-auto">
+          <div className="flex justify-center items-center gap-2">
+            <Image
+              src="/img/koopa-querales-logo.png"
+              title="Koopa Querales"
+              alt="koopa-querales-logo"
+              width={893}
+              height={249}
+            />
+          </div>
         </div>
-      </div>
-    </div>
+        <div className="container mx-auto p-6">
+          <div className="flex justify-center items-center gap-2">
+            {
+              SOCIAL.map((item: ItemType, key: number) => <IconWithLink key={key} item={item} />)
+            }
+          </div>
+        </div>
+      </section>
+  </>
   );
 }
