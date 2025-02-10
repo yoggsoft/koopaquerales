@@ -70,14 +70,8 @@ export default function RootLayout({
         <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
         <meta name="url" content="http://www.koopaquerales.com" />
         <meta itemProp="url" content="http://www.koopaquerales.com" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{ __html: woorankAssistant }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script type="text/javascript" dangerouslySetInnerHTML={{ __html: woorankAssistant }} />
       </head>
       <body
         className={`${permanentMarkerFont.variable} ${permanentMarkerFont.variable} antialiased`}
