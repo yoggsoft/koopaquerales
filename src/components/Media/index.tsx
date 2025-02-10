@@ -102,17 +102,21 @@ export default function Media() {
         </div>
       </div>
       <div className="container mx-auto p-6">
-        <div className="flex justify-center items-center gap-2">
-          Also Available on:
-          {
-            STORES.map((item: ItemType, key: number) => <IconWithLink key={key} item={item} />)
-          }
+        <div className="flex justify-center items-center flex-col gap-4">
+          <span>
+            Also Available on:
+          </span>
+          <div className="flex">
+            {
+              STORES.map((item: ItemType, key: number) => <IconWithLink key={key} item={item} />)
+            }
+          </div>
         </div>
       </div>
     </section>
       <section className="grid">
         <div className="container mx-auto p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
             {
               VIDEOS.map((video, key) => <VideoItem key={key} item={video} />)
             }
