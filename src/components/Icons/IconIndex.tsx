@@ -1,18 +1,51 @@
-import { MdCode } from "react-icons/md";
-import { LuHeart } from "react-icons/lu";
-import { FaGithub, FaSpotify, FaSoundcloud, FaLinkedin } from "react-icons/fa";
-import { SiAmazonmusic, SiYoutubemusic, SiApplemusic } from "react-icons/si";
+import {
+  FaCode,
+  FaGithub,
+  FaSpotify,
+  FaSoundcloud,
+  FaLinkedin,
+  FaFacebookSquare,
+  FaTiktok,
+  FaInstagram,
+  FaYoutube,
+  FaHeart
+} from "react-icons/fa";
 
-export const IconIndex: Record<string, React.ReactNode> = {
-  MdCode: <MdCode />,
-  LuHeart: <LuHeart />,
-  FaGithub: <FaGithub />,
-  FaSpotify: <FaSpotify />,
-  FaSoundcloud: <FaSoundcloud />,
-  SiAmazonmusic: <SiAmazonmusic />,
-  SiYoutubemusic: <SiYoutubemusic />,
-  SiApplemusic: <SiApplemusic />,
-  FaLinkedin: <FaLinkedin />
+import {
+  SiAmazonmusic,
+  SiYoutubemusic,
+  SiApplemusic
+} from "react-icons/si";
+
+export type IconNameType = 
+  'code' |
+  'heart' |
+  'github' |
+  'spotify' |
+  'soundcloud' |
+  'amazonmusic' |
+  'ytmusic' |
+  'applemusic' |
+  'linkedin' |
+  'facebook' |
+  'tiktok' |
+  'instagram' |
+  'youtube';
+
+export const IconIndex: Record<IconNameType, React.ReactNode> = {
+  code: <FaCode />,
+  heart: <FaHeart />,
+  github: <FaGithub />,
+  spotify: <FaSpotify />,
+  soundcloud: <FaSoundcloud />,
+  amazonmusic: <SiAmazonmusic />,
+  ytmusic: <SiYoutubemusic />,
+  applemusic: <SiApplemusic />,
+  linkedin: <FaLinkedin />,
+  facebook: <FaFacebookSquare />,
+  tiktok: <FaTiktok />,
+  instagram: <FaInstagram />,
+  youtube: <FaYoutube />
 };
 
 export default IconIndex;

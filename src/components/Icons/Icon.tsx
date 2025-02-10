@@ -1,6 +1,7 @@
 import { IconIndex } from '@/components/Icons';
+import { IconNameType } from './IconIndex';
 
-export default function Icon ({ name, ...props }: {name: string, className?: string, size?:number | string}) {
+export default function Icon ({ name, ...props }: {name: IconNameType, className?: string, size?:number | string}) {
   const {
     className: classNameProp,
     ...others

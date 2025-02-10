@@ -1,57 +1,48 @@
 import Image from "next/image";
-import { Icon } from "@/components/Icons";
+import { IconWithLink } from "@/components/Icons";
+import { IconNameType } from "@/components/Icons/IconIndex";
 
-export type StoreType = {
-  title: string,
+export type ItemType = {
+  title: item,
   url: string,
-  icon: string
+  icon: IconNameType
 };
 
-export type store =
+export type item =
+  'facebook' |
+  'instagram' |
+  'youtube' |
+  'tiktok' |
   'amazon' |
   'apple' |
+  'applemusic' |
   'deezer' |
   'spotify' |
   'soundcloud' |
   'ytmusic';
 
-const STORES: Array<StoreType> = [
+const SOCIAL: Array<ItemType> = [
   {
-    title: 'Apple Music',
-    icon: 'SiApplemusic',
-    url: 'https://itunes.apple.com/be/artist/koopa-querales/1423135500'
+    title: 'facebook',
+    url: 'https://www.facebook.com/koopaquerales',
+    icon: 'facebook'
   },
   {
-    title: 'amazon',
-    icon: 'SiAmazonmusic',
-    url: 'https://music.amazon.com/search/koopa+querales'
+    title: 'youtube',
+    url: 'https://www.youtube.com/c/koopaquerales',
+    icon: 'youtube'
   },
   {
-    title: 'Spotify',
-    icon: 'FaSpotify',
-    url: 'https://open.spotify.com/artist/26SaZCIwAtd9q93VhE7y60'
+    title: 'instagram',
+    url: 'https://www.instagram.com/koopaquerales',
+    icon: 'instagram'
   },
   {
-    title: 'Soundcloud',
-    icon: 'FaSoundcloud',
-    url: 'https://soundcloud.com/koopaquerales'
-  },
-  {
-    title: 'YouTube Music',
-    icon: 'SiYoutubemusic',
-    url: 'https://play.google.com/store/music/artist/Koopa_Querales?id=Ahcnhnktgwajxjblxn2ulnd3c4a'
+    title: 'tiktok',
+    url: 'https://www.tiktok.com/@koopaquerales',
+    icon: 'tiktok'
   }
 ];
-
-function StoreIcon ({ store }: { store: StoreType }): React.ReactNode {
-  const { title, url, icon } = store;
-
-  return (
-    <a aria-label={title} href={url} target="_blank" className={'mx-6'}>
-      <Icon name={icon} />
-    </a>
-  )
-}
 
 export default function Hero() {
   return (
@@ -79,23 +70,11 @@ export default function Hero() {
         <div className="container mx-auto p-6">
           <div className="flex justify-center items-center gap-2">
             {
-              STORES.map((store: StoreType, key: number) => <StoreIcon key={key} store={store} />)
+              SOCIAL.map((item: ItemType, key: number) => <IconWithLink key={key} item={item} />)
             }
           </div>
         </div>
       </section>
-      <section className="grid">
-      <div className="container mx-auto p-6">
-        <div className="flex justify-center items-center gap-2" style={{height: 380}}>
-          <iframe
-            src="https://open.spotify.com/embed/artist/26SaZCIwAtd9q93VhE7y60?theme=0"
-            width="100%"
-            height="380"
-            allow="encrypted-media"
-            ></iframe>
-        </div>
-      </div>
-    </section>
   </>
   );
 }

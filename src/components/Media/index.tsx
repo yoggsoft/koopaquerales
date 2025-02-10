@@ -1,11 +1,40 @@
-import { store } from "../Hero";
+import { ItemType, item } from "../Hero";
+import { IconWithLink } from "../Icons";
 
 type VideoType = {
   title: string,
   videoId: string,
   featured?: boolean,
-  links?: Partial<Record<store, string>>
+  links?: Partial<Record<item, string>>
 }
+
+const STORES: Array<ItemType> = [
+  {
+    title: 'applemusic',
+    icon: 'applemusic',
+    url: 'https://itunes.apple.com/be/artist/koopa-querales/1423135500'
+  },
+  {
+    title: 'amazon',
+    icon: 'amazonmusic',
+    url: 'https://music.amazon.com/search/koopa+querales'
+  },
+  {
+    title: 'spotify',
+    icon: 'spotify',
+    url: 'https://open.spotify.com/artist/26SaZCIwAtd9q93VhE7y60'
+  },
+  {
+    title: 'soundcloud',
+    icon: 'soundcloud',
+    url: 'https://soundcloud.com/koopaquerales'
+  },
+  {
+    title: 'ytmusic',
+    icon: 'ytmusic',
+    url: 'https://play.google.com/store/music/artist/Koopa_Querales?id=Ahcnhnktgwajxjblxn2ulnd3c4a'
+  }
+];
 
 const VIDEOS: Array<VideoType> = [
   {
@@ -61,6 +90,26 @@ function VideoItem ({ item }: { item: VideoType }): React.ReactNode {
 export default function Media() {
   return (
     <>
+      <section className="grid">
+      <div className="container mx-auto p-6">
+        <div className="flex justify-center items-center gap-2" style={{height: 380}}>
+          <iframe
+            src="https://open.spotify.com/embed/artist/26SaZCIwAtd9q93VhE7y60?theme=0"
+            width="100%"
+            height="380"
+            allow="encrypted-media"
+            ></iframe>
+        </div>
+      </div>
+      <div className="container mx-auto p-6">
+        <div className="flex justify-center items-center gap-2">
+          Also Available on:
+          {
+            STORES.map((item: ItemType, key: number) => <IconWithLink key={key} item={item} />)
+          }
+        </div>
+      </div>
+    </section>
       <section className="grid">
         <div className="container mx-auto p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">

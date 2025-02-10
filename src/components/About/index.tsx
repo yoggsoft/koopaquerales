@@ -2,10 +2,10 @@ export default function About() {
   return (
     <section className="about grid">
       <div className="container m-6 p-6 mx-auto">
-        <div className="text-4xl">
-          <h1>Hi, I&apos;m Koopa Querales</h1>
+        <div className="text-3xl">
+          <h1>I&apos;m Koopa Querales</h1>
           <p className='text-4xl mb-4'>
-            I&apos;m a singer-songwriter and guitarist from Venezuela now living in Brussels.
+            Singer-songwriter and guitarist from Venezuela now living in Brussels.
             Born in &apos;85, I grew up with MTV, so I was right there when world premiere videos from Linkin Park, Blink-182, and Papa Roach hit the screen.
           </p>
           <p className='text-4xl'>
