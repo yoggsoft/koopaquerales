@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className='mt-16'>
+      <main className='mt-24'>
         <Hero />
         <About />
         <Media />
