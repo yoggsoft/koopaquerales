@@ -1,5 +1,5 @@
-import { Icon } from '@/components/Icons';
-import { ItemType } from '../Hero';
+import { Icon } from '@/components/common/Icons'
+import { ItemType } from '@/const/links';
 
 export default function IconWithLink ({ item }: { item: ItemType }): React.ReactNode {
 	const { title, url, icon } = item;
