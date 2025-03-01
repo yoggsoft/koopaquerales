@@ -1,11 +1,14 @@
-import { About, Hero, Footer, Media } from "@/components";
+import { Header, About, Hero, Media, Footer } from '@/components';
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <About />
-      <Media />
+      <Header />
+      <main className='mt-16'>
+        <Hero />
+        <About />
+        <Media />
+      </main>
       <Footer />
     </>
   );

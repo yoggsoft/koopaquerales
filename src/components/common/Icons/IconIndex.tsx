@@ -8,14 +8,15 @@ import {
   FaTiktok,
   FaInstagram,
   FaYoutube,
-  FaHeart
-} from "react-icons/fa";
+  FaHeart,
+  FaCross
+} from 'react-icons/fa';
 
 import {
   SiAmazonmusic,
   SiYoutubemusic,
   SiApplemusic
-} from "react-icons/si";
+} from 'react-icons/si';
 
 export type IconNameType = 
   'code' |
@@ -30,7 +31,8 @@ export type IconNameType =
   'facebook' |
   'tiktok' |
   'instagram' |
-  'youtube';
+  'youtube' |
+  'cross';
 
 export const IconIndex: Record<IconNameType, React.ReactNode> = {
   code: <FaCode />,
@@ -45,7 +47,8 @@ export const IconIndex: Record<IconNameType, React.ReactNode> = {
   facebook: <FaFacebookSquare />,
   tiktok: <FaTiktok />,
   instagram: <FaInstagram />,
-  youtube: <FaYoutube />
+  youtube: <FaYoutube />,
+  cross: <FaCross />
 };
 
 export default IconIndex;

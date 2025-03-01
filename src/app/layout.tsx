@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
-import { Permanent_Marker } from "next/font/google";
+import type { Metadata } from 'next';
+import { Fira_Sans_Condensed } from 'next/font/google';
 import "./globals.css";
 
-const permanentMarkerFont = Permanent_Marker({
-  variable: "--font-geist-sans",
+const FiraSansFont = Fira_Sans_Condensed({
+  variable: "--font-fira-sans",
   weight: "400",
   subsets: ["latin"],
 });
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     description: "Official Website of Koopa Querales. Listen on all platforms.",
     locale: "en_US",
-    images: "/img/opengraph-image.jpg"
+    images: "http://www.koopaquerales.com/img/opengraph-image.jpg"
   },
   twitter: {
     card: 'summary_large_image',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Koopa Querales - singer-songwriter and guitarist from Venezuela",
     description: "Official Website of Koopa Querales. Listen on all platforms.",
     creator: "@koopaquerales",
-    images: "/img/opengraph-image.jpg"
+    images: "http://www.koopaquerales.com/img/opengraph-image.jpg"
   }
 };
 
@@ -74,7 +74,7 @@ export default function RootLayout({
         <script type="text/javascript" dangerouslySetInnerHTML={{ __html: woorankAssistant }} />
       </head>
       <body
-        className={`${permanentMarkerFont.variable} ${permanentMarkerFont.variable} antialiased`}
+        className={`${FiraSansFont.className} antialiased`}
       >
         {children}
       </body>

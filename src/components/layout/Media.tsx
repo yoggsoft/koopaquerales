@@ -1,5 +1,7 @@
-import { ItemType, item } from "../Hero";
-import { IconWithLink } from "../Icons";
+
+import { IconWithLink } from '@/components/common/Icons';
+import { ItemType, item } from "@/const/links";
+
 
 type VideoType = {
   title: string,
