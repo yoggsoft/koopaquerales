@@ -70,7 +70,19 @@ const VIDEOS: Array<VideoType> = [
   {
     title: 'wttj',
     videoId: 'I6Lg9LvF0Ic'
-  }
+  },
+  {
+    title: 'whisklive',
+    videoId: 'y7nZJWXMbQw'
+  },
+  {
+    title: 'enestanoche',
+    videoId: 'qeSgeckncLA'
+  },
+  {
+    title: 'darkness',
+    videoId: 'mpXrtPT42sI'
+  },
 ];
 
 function VideoItem ({ item }: { item: VideoType }): React.ReactNode {
