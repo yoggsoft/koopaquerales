@@ -8,8 +8,8 @@ export default function Footer() {
   return (
     <footer className='w-full'>
       <div className=' lg:justify-between'>
-        <div className="flex justify-center items-center font-sm">
-          <Icon name='code' size='12px' />&nbsp;by&nbsp;
+        <div className="flex justify-center items-center text-sm">
+          <Icon name='code' />&nbsp;by&nbsp;
           <a
             href='https://www.manuelreyes.dev' aria-label='Manuel Reyes'
             className='font-bold'

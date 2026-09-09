@@ -5,8 +5,14 @@ export default function IconWithLink ({ item }: { item: ItemType }): React.React
 	const { title, url, icon } = item;
 
 	return (
-		<a aria-label={title} href={url} target="_blank" className={'mx-2 md:mx-6 transform transition duration-350 hover:scale-110 hover:opacity-70'}>
-			<Icon name={icon} />
+		<a
+			aria-label={title}
+			href={url}
+			target="_blank"
+			rel="noopener noreferrer"
+			className={'p-2 mx-1 md:mx-4 transform transition duration-350 hover:scale-110 hover:opacity-70'}
+		>
+			<Icon name={icon} className='text-2xl md:text-3xl' />
 		</a>
 	)
 }
