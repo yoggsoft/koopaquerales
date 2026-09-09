@@ -4,7 +4,7 @@ import "./globals.css";
 
 const FiraSansFont = Fira_Sans_Condensed({
   variable: "--font-fira-sans",
-  weight: "400",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 

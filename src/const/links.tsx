@@ -30,7 +30,7 @@ export type IconNameType =
 
 
 export type ItemType = {
-  title: item,
+  title: string,
   url: string,
   icon: IconNameType
 };
@@ -78,10 +78,5 @@ export const STORES = [
     title: 'Listen on Soundcloud',
     icon: 'soundcloud',
     url: 'https://soundcloud.com/koopaquerales'
-  },
-  {
-    title: 'Stream on YouTube Music',
-    icon: 'ytmusic',
-    url: 'https://play.google.com/store/music/artist/Koopa_Querales?id=Ahcnhnktgwajxjblxn2ulnd3c4a'
   }
 ] as const;

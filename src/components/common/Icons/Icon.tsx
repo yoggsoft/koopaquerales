@@ -1,7 +1,7 @@
 import { IconIndex } from '@/components/common/Icons';
 import { IconNameType } from '@/const/links';
 
-export default function Icon ({ name, ...props }: {name: IconNameType, className?: string, size?:number | string}) {
+export default function Icon ({ name, ...props }: {name: IconNameType, className?: string}) {
   const {
     className: classNameProp,
     ...others
@@ -11,7 +11,6 @@ export default function Icon ({ name, ...props }: {name: IconNameType, className
     <span
       className={classNameProp}
       {...others}
-      // style={{fontSize: size || 36}}
     >
       {IconIndex[name]}
     </span>
